@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jo's Candles</title>
+        <link href="styles.css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap"> 
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header">
+            <nav id="nav-bar">
+                <img id="header-img" src="JCLogo.png" alt="Logo">
+            
+                <ul id="nav-list">
+                    <li>
+                        <a class="nav-link" href="#about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#products">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#reviews">REVIEWS</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#contact_us">CONTACT US</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about">
+            <div class="about-inner">
+                <h1 class="heading" id="ABOUT_US">ABOUT US</h1>
+                <h2 class="heading">Welcome to Jo's Sweet Scentsations!</h2>
+            
+                <p>Step into a world of delightful fragrances and artisanal candles, carefully crafted to elevate your everyday moments. Our candles are a perfect blend of warmth and charm, adding a touch of coziness to your home.</p>
+                <p>Each candle is lovingly handcrafted, ensuring you experience the highest quality and attention to detail. From soothing scents to uplifting aromas, we have the perfect candle to brighten up your space.</p>
+                <p>Explore our enchanting collection and join our community of candle enthusiasts and let our Stellar Scentsations be a part of your cherished moments. Thank you for visiting, and we hope our candles bring a little extra sparkle to your life.</p>
+            </div>
+
+        </section>
+
+        <section id="products">
+
+            <div class="candles-div item1-div">
+                <img id="preview-img" src="SSCandle1.jpg" alt="Scent Then Sip Candle Image">
+                <p class="name">Scent-Then-Sip Coffee Candle</p>
+                <p class="description">Indulge in the warm aroma of freshly brewed coffee from the comfort of our delightful candle mugs, where sensory bliss meets your favorite sip</p>
+                <img id="hover-img" src="SSCandle2.jpg">
+            </div>
+
+            <div class="candles-div item2-div">
+                <img id="preview-img" src="FFCandle1.jpg" alt="Femme Form Candle Image">
+                <p class="name">Femme Form Candle</p>
+                <p class="description">Embrace the beauty of femininity with our elegantly sculpted candles, celebrating the grace and strength of women in every glowing silhouette</p>
+                <img id="hover-img" src="FFCandle2.jpg">
+            </div>
+
+            <div class="candles-div item3-div">
+                <img id="preview-img" src="JJCandle1.jpeg" alt="Jo's Jar Image">
+                <p class="name">Jo's Jars</p>
+                <p class="description">Elegant pillar candles find their home in enchanting jars, offering a delightful array of scents to kindle a cozy ambiance in every space</p>
+                <img id="hover-img" src="JJCandle2.jpeg">
+            </div>
+
+        </section>
+
+        <section id="reviews">
+
+            <div id="video-div">
+                <video id="video" width="1920" height="1080">
+                    <source src="Review01.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <div id="product-review-div">
+                <p class="quote">"slay"</p>
+                <p class="reviewer"> - Sarah M, 27</p>
+                    
+            </div>
+
+        </section>
+        <section id="contact_us">
+            <h3 id="heading">Place an order now!</h3>
+        
+            <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+                <div class="input-group CustomerInfo">
+                    <input type="text" id="OrderName" name="OrderName" placeholder="Enter your name:" required>
+                    <input type="email" id="email" name="Email" placeholder="Enter your email address:" required>
+                </div>
+                
+                <div class="input-group">
+                    <ul class="checkboxes">
+                        <li>
+                          <label for="OurRange">
+                            <input type="radio" id="OurRange" name="OrderType" value="OurRange" />
+                            Our Range
+                          </label>
+                        </li>
+                        <li>
+                            <label for="CustomOrder">
+                                <input type="radio" id="CustomOrder" name="OrderType" value="CustomOrder" />
+                                Custom Order
+                            </label>
+                        </li>
+                      </ul>
+                </div>
+                
+                <div class="input-group OurRangeContent" id="ourRangeOptions">
+                    <label>Select your candle: </label>
+                    <select>
+                        <option value="option1">Scent-Then-Sip Coffee Candle</option>
+                        <option value="option2">Femme Form Candle</option>
+                        <option value="option3">Jo's Jars</option>
+                    </select>
+                </div>
+                
+                <div class="input-group CustomContent" id="customOrderOptions">
+                    <label>Enter your custom order:</label>
+                    <textarea placeholder="Insert a brief description of your design and we'll get back to you with a quote!"></textarea>
+                </div>
+                
+                <button type="submit" id="submit">Submit</button>
+            </form>
+
+            
+        </section>
+
+
+        <script>
+            const ourRangeRadio = document.getElementById('OurRange');
+            const customOrderRadio = document.getElementById('CustomOrder');
+            const ourRangeContent = document.getElementById('ourRangeOptions');
+            const customContent = document.getElementById('customOrderOptions');
+        
+            ourRangeRadio.addEventListener('change', () => {
+                ourRangeContent.style.display = ourRangeRadio.checked ? 'block' : 'none';
+                customContent.style.display = 'none';
+            });
+        
+            customOrderRadio.addEventListener('change', () => {
+                customContent.style.display = customOrderRadio.checked ? 'block' : 'none';
+                ourRangeContent.style.display = 'none';
+            });
+        </script>
+        
+
+    </body>
+</html>
